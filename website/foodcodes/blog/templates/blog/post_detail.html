@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Blog content section -->
+
+<legend class="card-title border-bottom mb-0"><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a></legend>
+{% if object.author == user %}
+<p class="mt-1 mb-1" align="right">
+    <a class="btn btn-outline-info btn-sm" href="{% url 'post-update' object.id %}">Update</a>
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'post-delete' object.id %}">Delete</a>
+</p>
+{% endif %}
+<small class="text-muted">{{ post.date_posted|date:'F d, Y, f a' }}</small>
+<img class="card-img card-img-detail mb-1" src="{{ post.photo.url }}" alt="">
+<a href="{% url 'user-posts' post.author.username %}"><img class="imginpost" align="left" src="{{ post.author.profile.image.url }}"></a>
+<a href="{% url 'post-detail' post.id %}"><h3 class="article-title" align="left">{{ post.title }}</h3></a>
+<p class="article-content" align="left">{{ post.content }}</p>
+<p align="left"><a class="btn btn-outline-info btn-sm" href="{% url 'like-post' pk=post.pk %}">Like</a>
+<a class="btn btn-outline-danger btn-sm" href="{% url 'unlike-post' pk=post.pk %}">Unlike</a></p>
+<p align="right"><a class="btn btn-outline-info btn-sm"  href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a></p>
+<p class="text-muted mb-0" align="left">{{ post.likes.count }} likes {{ post.comments.count }} comments</p>
+<div align="left">
+    {% for comment in post.comments.all %}
+            <a href="{% url 'user-posts' comment.author %}"><img class="imginpost" align="left" src="{{ comment.author.profile.image.url }}"></a>
+            <a href="{% url 'user-posts' comment.author %}"><strong>@{{ comment.author }}</strong></a>
+            <small class="text-muted">{{ comment.created_date|date:'F d, f a' }}</small>
+
+            {% if object.author == user or comment.author == user %}
+                <a class="btn btn-outline-danger btn-sm" href="{% url 'comment-delete' pk=comment.pk %}">X</a>
+            {% endif %}
+
+            {{comment.comment|safe|linebreaks }}
+            {% empty %}
+            <p>No Comments!</p>
+    {% endfor %}
+</div>
+<div class="border"></div>
+<div class="border"></div>
+  <!-- Blog content section end -->
+{% endblock %}
+

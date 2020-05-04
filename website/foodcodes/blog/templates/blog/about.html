@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <h1 class="my-4">About</h1>
+    <p>Eat, drink & Travel. 🥘 ✈️ <br>
+    Code : ▒▒▒▒▒▒▒▒▒▒▒ <—scratch here <br>
+    Upload and share your yummy moments 🍽🍹</p>
+<br>
+<br>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="card-title">Contact Us</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group" align="right">
+                <button class="btn btn-outline-info" type="submit">Send</button>
+            </div>
+        </form>
+
+
+{% endblock %}

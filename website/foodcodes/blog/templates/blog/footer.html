@@ -1,0 +1,31 @@
+{% load static %}
+<footer>
+    <div class="footer-container">
+        <div class="left-col">
+            <h5>Follow Us</h5>
+            <div class="social-media">
+                <a href="https://www.instagram.com/food.codes/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/codesfood/"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="right-text">&copy; Food Codes 2020 &nbsp; All Right Reserved.</p>
+        </div>
+
+        <div class="left-col">
+            <h4 align="center">Get the App</h4>
+            <a href="#"><img class="appdown" src="{% static 'images/downloadIOS.svg' %}" alt=""></a>
+            <a href="#"><img class="appdown" src="{% static 'images/downloadAndroid.png' %}" alt=""></a>
+        </div>
+
+        <div class="right-col">
+            <h1>Our Newsletter</h1>
+            <div class="border"></div>
+            <p>Enter your Email to get our news and updates.</p>
+            <form action="{% url 'newsletter' %}" method="GET" class="newsletter-form">
+                <input type="text" class="txtb" placeholder="Enter Your Email">
+                <input type="submit" class="footbtn" value="submit">
+            </form>
+        </div>
+    </div>
+</footer>

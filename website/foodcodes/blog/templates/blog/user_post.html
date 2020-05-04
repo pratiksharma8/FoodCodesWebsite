@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<legend class="border-bottom">@{{ view.kwargs.username.upper }} ({{ page_obj.paginator.count }} Posts)</legend>
+<div class="grid-container">
+    {% for post in posts %}
+      <div class="grid-item">
+        <small style="font-size: 14px;" class="text-muted">{{ post.date_posted|date:'F d, Y, f a' }}</small><br>
+        <a href="{% url 'post-detail' post.id %}"><img class="card-img mb-1" src="{{ post.photo.url }}" alt=""></a>
+        <a href="{% url 'post-detail' post.id %}"><h3 class="article-title">{{ post.title }}</h3></a>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock %}

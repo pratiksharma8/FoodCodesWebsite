@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if query %}
+
+    {% if results %}
+
+        <div align="left">
+            <h3>Search result for "{{ query }}"</h3>
+            <table style="width:40%">
+                <tr>
+                <th>Post</th>
+                <th>Author</th>
+                </tr>
+                {% for post in results %}
+                    <tr>
+                    <td><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></td>
+                    <td><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a></td>
+                    </tr>
+            {% endfor %}
+            </table>
+        </div>
+        <div class="border"></div>
+<div class="grid-container">
+        {% for post in results %}
+<div class="grid-item">
+          <a href="{% url 'user-posts' post.author.username %}"><img class="imginpost mb-1" align="left" src="{{ post.author.profile.image.url }}"></a>
+          <div align="right" style="font-size: .67em;"><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a>
+          </div>
+        <a href="{% url 'post-detail' post.id %}"><img class="card-img mb-1" src="{{ post.photo.url }}" alt=""></a>
+        <a href="{% url 'post-detail' post.id %}"><h3 class="article-title">{{ post.title }}</h3></a>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+        {% endfor %}
+      </div>
+    {% else %}
+
+       <h3>No results</h3>
+
+    {% endif %}
+
+{% endif %}
+
+{% endblock %}
