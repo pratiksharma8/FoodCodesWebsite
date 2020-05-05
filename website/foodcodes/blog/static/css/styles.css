@@ -104,6 +104,14 @@ th, td {
     }
 }
 
+.nav-search {
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 /* Content */
 .blog-content {
   min-height: 100vh;
