@@ -15,7 +15,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name='likes')
 
-    photo = ProcessedImageField(upload_to='photos',
+    photo = ProcessedImageField(upload_to='photo',
                                 processors=[ResizeToFit(1000, 800)],
                                 format='JPEG',
                                 options={'quality': 100},
