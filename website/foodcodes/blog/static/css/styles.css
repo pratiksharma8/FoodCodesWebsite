@@ -1,5 +1,7 @@
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Overlock', cursive;
   background-color: #8EC5FC;
   background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
@@ -30,21 +32,15 @@ th, td {
           transform: rotate(-720deg) scale(0.8);
 }
 
-.main-menu {
+.navbar {
   font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-   }
-  .main-menu .navbar-nav li .nav-link {
-    font-size: 16px;
-    text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-nav li .nav-link{
     padding: 15px 25px;
-    color: #7e5578; }
-  .main-menu .navbar-nav li.active a, .main-menu .navbar-nav li:hover a, .main-menu .navbar-nav li:visited a {
-    color: black; }
+    color: #7e5578;
+    }
 
 .dropdown-menu {
   text-transform: uppercase;
@@ -59,57 +55,6 @@ th, td {
     color: #f3eb2c;
 }   #profilename:hover{
         color: black;
-}
-
-.toggle-button {
-    position: absolute;
-    top: 20px;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: #ededed;
-    border-radius: 10px;
-}
-@media (max-width: 800px) {
-    .toggle-button {
-        display: flex;
-    }
-    .navbar-nav {
-       display: none;
-       width: 100%;
-    }
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .navbar-nav ul {
-        width: 100%;
-        flex-direction: column;
-    }
-    .navbar-nav li {
-        text-align: center;
-    }
-    .navbar-nav li a {
-        padding: .5rem 1rem;
-    }
-    .navbar-nav.active {
-        display: flex;
-    }
-}
-
-.nav-search {
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 /* Content */
@@ -139,11 +84,11 @@ th, td {
   .blog-content .card-img{
     image-rendering: pixelated;
     height: 300px;
-    width: 300px;
+    width: 100%;
    }
     .blog-content .card-img-detail{
       image-rendering: pixelated;
-      height: 800px;
+      height: auto;
       width: 100%;
       object-fit: fill;
       }
