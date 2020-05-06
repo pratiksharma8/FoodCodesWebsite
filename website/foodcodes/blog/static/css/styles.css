@@ -94,7 +94,7 @@ th, td {
 
     .blog-content .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     }
 
     .blog-content .grid-item {
