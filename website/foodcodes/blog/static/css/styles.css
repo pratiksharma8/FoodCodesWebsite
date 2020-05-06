@@ -87,7 +87,6 @@ th, td {
    }
     .blog-content .card-img-detail{
       image-rendering: pixelated;
-      height: auto;
       width: 100%;
       object-fit: cover;
       }
