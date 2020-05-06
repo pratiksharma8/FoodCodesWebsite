@@ -84,7 +84,7 @@ th, td {
     image-rendering: pixelated;
     height: 300px;
     width: 100%;
-    object-fit: fit;
+    object-fit: cover;
    }
     .blog-content .card-img-detail{
       image-rendering: pixelated;
