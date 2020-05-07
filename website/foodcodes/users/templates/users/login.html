@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
+{% providers_media_js %}
 {% block content %}
     <div class="content-section">
 
@@ -22,7 +24,13 @@
                 </small>
             </div>
         </form>
-        <div class="border-top pt-3">
+        <div class="border mt-2 mb-2"></div>
+                or
+                <h4>Sign In with:</h4>
+                <a href="{% provider_login_url 'google' %}"><button class="btn btn-outline-info" type="submit">Google</button></a>
+                <a href="{% provider_login_url 'facebook' method='oauth2' %}"><button class="btn btn-outline-info" type="submit">Facebook</button></a>
+
+        <div class="border-top mt-3">
             <small class="text-muted">Need an Account?</small><br>
             <a class="ml-2" href="{% url 'register' %}"><button class="btn btn-outline-info" type="submit">Register</button></a>
         </div>
