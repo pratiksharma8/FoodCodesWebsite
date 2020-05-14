@@ -11,7 +11,7 @@
 </p>
 {% endif %}
 <small class="text-muted">{{ post.date_posted|date:'F d, Y, f a' }}</small>
-<img class="card-img card-img-detail mb-1" src="{{ post.photo.url }}" alt="">
+<img class="card-pic mb-1" src="{{ post.photo.url }}" alt="">
 <a href="{% url 'user-posts' post.author.username %}"><img class="imginpost" align="left" src="{{ post.author.profile.image.url }}"></a>
 <a href="{% url 'post-detail' post.id %}"><h3 class="article-title" align="left">{{ post.title }}</h3></a>
 <p class="article-content" align="left">{{ post.content }}</p>
