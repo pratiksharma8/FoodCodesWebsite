@@ -70,10 +70,6 @@ th, td {
     padding: 10px 0;
     width: 80%;
   }
-  .blog-content .card-img-top{
-    image-rendering: pixelated;
-    height: auto;
-  }
 
   .blog-content .card-img{
     image-rendering: pixelated;
@@ -81,11 +77,15 @@ th, td {
     width: 100%;
     object-fit: cover;
    }
-    .blog-content .card-img-detail{
-      image-rendering: pixelated;
-      height: auto !important;
-      width: 100%;
-      }
+
+.card-pic {
+  image-rendering: pixelated;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5%;
+}
 
     .blog-content .grid-container {
       display: grid;
@@ -101,7 +101,6 @@ th, td {
 .homepic {
   display: inline-block;
   position: relative;
-  height: 50%;
   width: 100%;
   overflow: hidden;
   border-radius: 5%;
@@ -115,11 +114,7 @@ th, td {
   overflow: hidden;
   border-radius: 50%;
 }
-.imginpost img {
-  width: auto;
-  height: 100%;
-  margin-left: -50px;
-}
+
 
 /* Footer */
 footer {
