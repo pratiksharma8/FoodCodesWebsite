@@ -1,8 +1,10 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
 
 <h1 class="my-4">Welcome to Food Codes!</h1>
-<h4>Share your yummy moments!</h4>
+<img class="homepic" src="{% static 'images/PicForFC.jpg' %}" alt="">
+<h4 class="mt-2">Share your yummy moments!</h4>
 <br>
 <p>See what food coders have shared.</p>
 <a class="btn btn-outline-info btn-sm" href="{% url 'blog-page' %}">Foods</a>
