@@ -3,18 +3,17 @@
 {% block content %}
 
 <h1 class="my-4">Foods</h1>
-{% for post in posts %}
-        <div class="card">
-            <h2 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
-            <a href="{% url 'post-detail' post.id %}"><img class="card-img-top" src="{{ post.blog_photo.url }}" alt="Card image cap"></a>
-          <div class="card-body">
-              <p class="text-muted mb-0" align="left">{{ post.likes.count }} likes {{ post.comments.count }} comments</p>
-              <h4><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a></h4>
-                <small class="text-muted" >{{ post.date_posted|date:'F d, Y' }}</small>
-                <p class="card-text">{{ post.content }}</p>
+<div class="grid-container">
+    {% for post in posts %}
+      <div class="grid-item">
+          <a href="{% url 'user-posts' post.author.username %}"><img class="imginpost mb-1" align="left" src="{{ post.author.profile.image.url }}"></a>
+          <div align="right" style="font-size: .67em;"><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a>
           </div>
-        </div>
-<div class="border"></div>
-{% endfor %}
-
+        <a href="{% url 'post-detail' post.id %}"><img class="card-img mb-1" src="{{ post.photo.url }}" alt=""></a>
+        <a href="{% url 'post-detail' post.id %}"><h3 class="article-title">{{ post.title }}</h3></a>
+        <div class="border"></div>
+        <div class="border"></div>
+      </div>
+    {% endfor %}
+</div>
 {% endblock %}
