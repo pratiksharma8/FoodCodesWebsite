@@ -1,19 +1,13 @@
 {% extends 'blog/base.html' %}
-{% load static %}
 {% block content %}
 
-<h1 class="my-4">Food Codes</h1>
-<div class="grid-container">
-    {% for post in posts %}
-      <div class="grid-item">
-          <a href="{% url 'user-posts' post.author.username %}"><img class="imginpost mb-1" align="left" src="{{ post.author.profile.image.url }}"></a>
-          <div align="right" style="font-size: .67em;"><a href="{% url 'user-posts' post.author.username %}">@{{ post.author }}</a>
-          </div>
-        <a href="{% url 'post-detail' post.id %}"><img class="card-img mb-1" src="{{ post.photo.url }}" alt=""></a>
-        <a href="{% url 'post-detail' post.id %}"><h3 class="article-title">{{ post.title }}</h3></a>
-        <div class="border"></div>
-        <div class="border"></div>
-      </div>
-    {% endfor %}
-</div>
+<h1 class="my-4">Welcome to Food Codes!</h1>
+<h4>Share your yummy moments!</h4>
+<br>
+<p>See what food coders have shared.</p>
+<a class="btn btn-outline-info btn-sm" href="{% url 'blog-page' %}">Foods</a>
+<br>
+<br>
+<p>Upload and post your picture and share it with other food coders.</p>
+<a class="btn btn-outline-info btn-sm" href="{% url 'post-create' %}">Post</a>
 {% endblock %}
