@@ -76,10 +76,6 @@ th, td {
     height: auto;
   }
 
-  .blog-content .card-body{
-    text-align: left;
-  }
-
   .blog-content .card-img{
     image-rendering: pixelated;
     height: 300px;
