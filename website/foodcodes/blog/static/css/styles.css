@@ -99,6 +99,15 @@ th, td {
       text-align: center;
     }
 
+.homepic {
+  display: inline-block;
+  position: relative;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5%;
+}
+
 .imginpost {
   display: inline-block;
   position: relative;
